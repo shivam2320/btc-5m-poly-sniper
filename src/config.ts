@@ -16,7 +16,7 @@ export function loadConfig(): Config {
   const tradeSizeUsd = parseFloat(process.env.TRADE_SIZE_USD || '5');
   const dryRun = process.env.DRY_RUN === 'true';
 
-  const targetPricesStr = process.env.TARGET_PRICES || '0.07,0.08,0.09,0.10';
+  const targetPricesStr = process.env.TARGET_PRICES || '0.07';
   const targetPrices = targetPricesStr.split(',').map((p) => parseFloat(p.trim()));
 
   const entrySecondsBeforeExpiry = parseInt(process.env.ENTRY_SECONDS_BEFORE_EXPIRY || '60', 10);
