@@ -142,11 +142,10 @@ export class PolymarketClient {
         };
       }
 
-      const minAmount = Math.max(this.config.tradeSizeUsd, 1);
-      const size = Math.ceil((minAmount / price) * 100) / 100;
+      const size = this.config.tradeShareSize;
 
       if (this.config.dryRun) {
-        console.log(`  🧪 [DRY RUN] Would buy ${side} @ ${(price * 100).toFixed(0)}¢ — ${size.toFixed(1)} shares ($${this.config.tradeSizeUsd})`);
+        console.log(`  🧪 [DRY RUN] Would buy ${side} @ ${(price * 100).toFixed(0)}¢ — ${size} shares`);
         return { success: true, orderId: `dry-${Date.now()}`, side, price };
       }
 

@@ -18,7 +18,7 @@ class SniperBot {
     console.log('   BTC 5-MIN SNIPER BOT');
     console.log('═══════════════════════════════════════════════');
     console.log(`  Mode:         ${this.config.dryRun ? '🧪 DRY RUN' : '💰 LIVE'}`);
-    console.log(`  Trade size:   $${this.config.tradeSizeUsd}`);
+    console.log(`  Trade size:   ${this.config.tradeShareSize} shares`);
     console.log(`  Prices:       ${this.config.targetPrices.map((p) => (p * 100).toFixed(0) + '¢').join(', ')}`);
     console.log(`  Entry window: last ${this.config.entrySecondsBeforeExpiry}s`);
     console.log('═══════════════════════════════════════════════');
