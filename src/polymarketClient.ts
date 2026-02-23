@@ -43,7 +43,10 @@ export class PolymarketClient {
     this.clobClient = new ClobClient(
       'https://clob.polymarket.com',
       137,
-      this.signer
+      this.signer,
+      undefined,
+      2,
+      config.safeAddress
     );
   }
 
@@ -69,8 +72,8 @@ export class PolymarketClient {
         137,
         this.signer,
         this.apiCreds,
-        0,
-        this.signer.address
+        2,
+        this.config.safeAddress
       );
 
       this.initialized = true;
